@@ -26,3 +26,70 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+
+User  - people who log in and store credentials
+
+
+Credentials  - Websites, usernames, passwords and tags that users store
+
+
+
+User has_many Credentials
+
+Credentials belongs_to User
+
+
+
+needed controllers: User, Credential, Welcome.
+
+
+Models: 
+
+User
+
+Credential
+
+
+Database: 
+
+create_table :credentials |do|
+t.string :website
+t.string :username
+t.string :password
+t.string :tag
+
+t.timestamp null: false
+end
+
+
+
+user = User.new :website => "website.com" , :username => "joe@example.com" , :password => "12345" , :tag => "personal"
+
+
+USERS are people who log into the website to save stuff.
+
+Credentials are the things they save! 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

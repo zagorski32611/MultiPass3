@@ -8,12 +8,12 @@ class CredentialController < ApplicationController
     @credential.save
     redirect_to @credential
   end
-  
+
   def show
-    @credential = Credential.find(params[:id])
+    @credential = Credential.find(credential_params[:id])
   end
 private
   def credential_params
-    params.require(:username).permit(:website, :password, :tag)
+    params.permit(:username, :website, :password, :tag)
   end
 end
