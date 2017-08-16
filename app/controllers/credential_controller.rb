@@ -12,6 +12,11 @@ class CredentialController < ApplicationController
   def show
     @credential = Credential.find(credential_params[:id])
   end
+
+  def new
+    @credential = Credential.new
+  end
+
 private
   def credential_params
     params.permit(:username, :website, :password, :tag)
