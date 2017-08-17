@@ -4,7 +4,10 @@ class CredentialsController < ApplicationController
   end
 
   def create
-    render plain: params[:credentials].inspect
+    render plain: params[:credential]
+    # @credentials.save
+    # redirect_to @credential
+    # the create function seems to kinda work with these two lines gone.
   end
 
   def show
