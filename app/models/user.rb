@@ -1,3 +1,3 @@
 class User < ActiveRecord::Base
-  has_many :credential
+  has_many :credentials
 end

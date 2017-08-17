@@ -1,22 +1,26 @@
 class CredentialsController < ApplicationController
   def index
-    @credential = Credential.all
+    @credentials = Credentials.all
   end
 
   def create
-    @credential = Credential.new(credential_params)
-    @credential.save
-    redirect_to @credential.index
-
+    @credentials = Credentials.new(credential_params[:id])
+    if @credentials.save
+      redirect_to @credentials.index
+    else
+      render 'new'
+    end
+    render "/credentials/index"
   end
+  
 
   def show
-    @credential = Credential.find(credential_params[:id])
+    @credentials = Credentials.find(credential_params[:id])
   end
 
   def new
-    @credential = Credential.new
-    render "/credentials/index"
+    @credentials = Credentials.new(credential_params)
+    @credentials.save
   end
 
 private

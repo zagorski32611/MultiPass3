@@ -6,4 +6,4 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-joe = Credential.create([{ website: 'website.com'}, { username: 'joe@example.com'}, {password: '12345'},{tag: 'personal'}])
+joe = Credentials.create([{ website: 'website.com'}, { username: 'joe@example.com'}, {password: '12345'},{tag: 'personal'}])

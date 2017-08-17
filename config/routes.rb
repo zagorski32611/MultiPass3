@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'welcome#index'
-  resources :credential
+  resources :credentials
   post 'credentials' => 'credentials#new'
   get 'credentials/:id' => 'credentials#show'
   get 'credentials' => 'credentials#index'
