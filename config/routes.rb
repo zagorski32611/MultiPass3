@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   root 'welcome#index'
   resources :credential
-  post 'credential' => 'credential#new'
-  get 'credential/:id' => 'credential#show'
-  get 'credential' => 'credential#index'
+  post 'credentials' => 'credentials#new'
+  get 'credentials/:id' => 'credentials#show'
+  get 'credentials' => 'credentials#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
