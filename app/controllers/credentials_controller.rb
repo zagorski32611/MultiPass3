@@ -7,6 +7,7 @@ class CredentialsController < ApplicationController
     @credential = Credential.new(credential_params)
     @credential.save
     redirect_to @credential.index
+
   end
 
   def show
@@ -15,6 +16,7 @@ class CredentialsController < ApplicationController
 
   def new
     @credential = Credential.new
+    render "/credentials/index"
   end
 
 private
