@@ -4,15 +4,8 @@ class CredentialsController < ApplicationController
   end
 
   def create
-    @credentials = Credentials.new(credential_params[:id])
-    if @credentials.save
-      redirect_to @credentials.index
-    else
-      render 'new'
-    end
-    render "/credentials/index"
+    render plain: params[:credentials].inspect
   end
-  
 
   def show
     @credentials = Credentials.find(credential_params[:id])
@@ -25,6 +18,19 @@ class CredentialsController < ApplicationController
 
 private
   def credential_params
-    params.permit(:username, :website, :password, :tag)
+    params.permit(:website, :username, :password, :tag)
   end
 end
+
+
+=begin
+def create
+  @credentials = Credentials.new(credential_params[:id])
+  if @credentials.save
+    redirect_to @credentials
+  else
+    render 'new'
+  end
+  render "/credentials/index"
+end
+=end
