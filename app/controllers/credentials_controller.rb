@@ -1,21 +1,21 @@
 class CredentialsController < ApplicationController
   def index
+    @credentials = Credentials.new
     @credentials = Credentials.all
   end
 
   def create
-    render plain: params[:credential]
-    # @credentials.save
-    # redirect_to @credential
-    # the create function seems to kinda work with these two lines gone.
-  end
+    @credentials = Credentials.new(params[:credentials])
 
+    @credentials.save
+    redirect_to @credentials
+  end
   def show
-    @credentials = Credentials.find(credential_params[:id])
+    @credentials = Credentials.find(params[:id])
   end
 
   def new
-    @credentials = Credentials.new(credential_params)
+    @credentials = Credentials.new(params[:id])
     @credentials.save
   end
 
@@ -27,6 +27,25 @@ end
 
 
 =begin
+
+This works: render plain: params[:credential]
+
+This kinda works lol:
+
+def create
+  @credentials = Credentials.new(credential_params)
+  if @credentials.save
+    redirect_to '/credentials'
+  else render "/credentials"
+  end
+end
+
+
+
+I don't remember what this is. But it's annoying
+
+
+
 def create
   @credentials = Credentials.new(credential_params[:id])
   if @credentials.save
