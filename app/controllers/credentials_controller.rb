@@ -6,9 +6,10 @@ class CredentialsController < ApplicationController
 
   def create
     @credentials = Credentials.new(params[:credentials])
+    redirect_to 'credentials'
 
     @credentials.save
-    redirect_to @credentials
+
   end
   def show
     @credentials = Credentials.find(params[:id])
