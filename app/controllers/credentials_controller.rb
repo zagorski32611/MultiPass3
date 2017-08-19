@@ -6,7 +6,7 @@ class CredentialsController < ApplicationController
 
   def create
     @credentials = Credentials.new(params[:credentials])
-    redirect_to 'credentials'
+    redirect_to credentials_url
 
     @credentials.save
 
@@ -56,4 +56,30 @@ def create
   end
   render "/credentials/index"
 end
+
+****************************************************************************
+This is the credential CredentialController
+class CredentialController < ApplicationController
+  def index
+    @credential = Credential.all
+  end
+
+  def create
+    @credential = Credential.new(credential_params)
+    @credential.save
+    redirect_to @credential
+  end
+
+  def show
+    @credential = Credential.find(credential_params[:id])
+  end
+
+  def new
+    @credential = Credential.new
+  end
+
+private
+  def credential_params
+    params.permit(:username, :website, :password, :tag)
+  end
 =end
