@@ -22,7 +22,7 @@ class CredentialsController < ApplicationController
 
 private
   def credential_params
-    params.permit(:website, :username, :password, :tag)
+    params.require(:user).permit(:website, :username, :password, :tag)
   end
 end
 

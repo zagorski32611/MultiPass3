@@ -33,6 +33,18 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Helvetica", sans-serif}
   <p class="w3-xlarge">Never forget a password again!</p>
   <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Please Log-In Here</button>
 </header>
+
+<p class="navbar-text pull-right">
+<% if user_signed_in? %>
+  Logged in as <strong><%= current_user.email %></strong>.
+  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+<% else %>
+  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+<% end %>
+</p>
+
 <!-- First Grid -->
 <div class="w3-row-padding w3-container" style= "padding: 43px 16px">
   <div class="w3-content">
