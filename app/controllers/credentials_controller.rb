@@ -6,13 +6,12 @@ class CredentialsController < ApplicationController
 
   def create
     @credentials = Credentials.new(params[:credentials])
-    redirect_to credentials_url
-
     @credentials.save
 
   end
   def show
     @credentials = Credentials.find(params[:id])
+    redirect_to '/credentials/index'
   end
 
   def new
