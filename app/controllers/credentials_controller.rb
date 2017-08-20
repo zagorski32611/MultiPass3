@@ -22,7 +22,7 @@ class CredentialsController < ApplicationController
     if @credentials.save
       redirect_to @credentials
     else
-      render 'new'
+      render 'index'
     end
   end
 
@@ -45,7 +45,7 @@ class CredentialsController < ApplicationController
 
 private
   def credential_params
-    params.require(:user).permit(:website, :username, :password, :tag)
+    params.require(:credential).permit(:website, :username, :password, :tag)
   end
 end
 
