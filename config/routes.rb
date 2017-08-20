@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   post 'credential' => 'credential#new'
   get 'credentials/:id' => 'credentials#show'
   get 'credentials' => 'credentials#index'
-
+  put 'credentials/:id', to: 'credentials#update'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
