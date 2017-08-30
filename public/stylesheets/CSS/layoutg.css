@@ -1,0 +1,106 @@
+/*
+HTML 5 Template Name: Basic 33
+File: Layout CSS
+Author: OS Templates
+Author URI: http://www.os-templates.com/
+Licence: <a href="http://www.os-templates.com/template-terms">Website Template Licence</a>
+*/
+
+body{margin:0; padding:0; font-size:13px; font-family:Georgia, "Times New Roman", Times, serif;}
+
+.clear:after{content:"."; display:block; height:0; clear:both; visibility:hidden; line-height:0;}
+.clear{display:block; width:100%; clear:both;}
+html[xmlns] .clear{display:block;}
+* html .clear{height:1%;}
+
+a{outline:none; text-decoration:none;}
+
+.fl_left{float:left;}
+.fl_right{float:right;}
+
+/*----------------------------------------------HTML 5 Overrides-------------------------------------*/
+
+address, article, aside, figcaption, figure, footer, header, hgroup, nav, section{display:block; margin:0; padding:0;}
+
+/*----------------------------------------------Wrapper-------------------------------------*/
+
+div.wrapper{display:block; margin:0 auto; width:960px; text-align:left;}
+
+.row1{color:#000; background-color:#0c71c3;} /* Header Background Color */
+.row2{color:#979797; background-color:#FFFFFF;}
+.row3, .row3 a{color:#000; background-color:#0c71c3;} /* Footer Background Color */
+
+/*----------------------------------------------Generalise-------------------------------------*/
+
+#header, #container, #footer{display:block; width:960px;}
+
+h1, h2, h3, h4, h5{margin:0; padding:0; font-size:24px; font-weight:normal; font-style:normal; line-height:normal;}
+h6{margin:0; padding:0; font-size:12px; font-weight:normal; font-style:normal; line-height:normal;}
+
+
+/*----------------------------------------------Header-------------------------------------*/
+
+#header{}
+
+/*----------------------------------------------Content Container-------------------------------------*/
+
+#container{background:url("../images/cbg.gif") top center repeat-y;}
+
+/*--Content--*/
+
+#container #col1{display:block; float:left; width:630px; color:#000; background-color:#d8d9d9;}
+
+#container #col2{display:block; float:right; width:300px; color:#979797; background-color:#FFFFFF;}
+#container #col2 .box1{display:block; width:300px; color:#FFFFFF; background-color:#666666;}
+#container #col2 .box2{display:block; width:300px; color:#666666; background-color:#CCCCCC;}
+
+/*----------------------------------------------Footer-------------------------------------*/
+
+#footer{}
+
+/*---------------------------------------------- Drop Down Menu-------------------------------------*/
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: #0c71c3;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #2ea3f2;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
