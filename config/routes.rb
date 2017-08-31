@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
   root 'welcome#index'
-  post 'credentials/new' => 'credentials#new'
-  get 'credentials' => 'credentials#index'
-  put 'credentials/:id', to: 'credentials#update'
   resources :credentials
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.

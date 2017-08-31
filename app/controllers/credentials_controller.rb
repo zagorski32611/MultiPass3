@@ -5,7 +5,6 @@ class CredentialsController < ApplicationController
   end
 
   def show
-    @credentials = Credentials.find(params[:id])
   end
 
   def new
@@ -13,38 +12,50 @@ class CredentialsController < ApplicationController
   end
 
   def edit
-    @credentials = Credentials.all
-
   end
 
   def create
     @credentials = Credentials.new(credential_params)
-
-    if @credentials.save
-      redirect_to 'credentials'
-    else
-      render 'new'
+    respond_to do |format|
+      if @credentials.save
+        flash[:success] = 'Password was successfully created.'
+        format.html { redirect_to @credentials }
+        format.json { render :show, status: :created, location: @credentials }
+      else
+        format.html { render :new }
+        format.json { render json: @credentials.errors, status: :unprocessable_entity }
+      end
     end
   end
 
   def update
-    @credentials = Credentials.find(params[:id])
-
-    if @credentials.update(credential_params)
-      redirect_to 'credentials'
-    else
-      render 'edit'
+    respond_to do |format|
+      if @todo.update(todo_params)
+        flash[:success] = 'Todo was successfully updated.'
+        format.html { redirect_to @todo }
+        format.json { render :show, status: :ok, location: @todo }
+      else
+        format.html { render :edit }
+        format.json { render json: @todo.errors, status: :unprocessable_entity }
+      end
     end
   end
 
   def destroy
-    @credentials = Credentials.find(params[:id])
-    @credentials.destroy
-
-    redirect_to credentials_path
+    @todo.destroy
+    respond_to do |format|
+      flash[:danger] = 'Todo was successfully destroyed.'
+      format.html { redirect_to todos_url }
+      format.json { head :no_content }
+    end
   end
 
 private
+
+  def set_credentials
+    @todo = Todo.find(params[:id])
+  end
+
   def credential_params
     params.require(:credentials).permit(:website, :username, :password, :tag)
   end
