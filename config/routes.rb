@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :users
   root 'welcome#index'
-  resources :credentials
-  post 'credential' => 'credential#new'
+  post 'credentials/new' => 'credentials#new'
   get 'credentials/:id' => 'credentials#show'
   get 'credentials' => 'credentials#index'
   put 'credentials/:id', to: 'credentials#update'
+  resources :credentials
+  devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

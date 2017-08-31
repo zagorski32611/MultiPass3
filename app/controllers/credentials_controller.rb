@@ -20,9 +20,9 @@ class CredentialsController < ApplicationController
     @credentials = Credentials.new(credential_params)
 
     if @credentials.save
-      redirect_to @credentials
+      redirect_to @credentails
     else
-      render 'index'
+      render 'new'
     end
   end
 
