@@ -13,7 +13,7 @@ class CredentialsController < ApplicationController
   end
 
   def edit
-    @credentials = Credentials.find(params[:id])
+    @credentials = Credentials.all
 
   end
 
@@ -21,7 +21,7 @@ class CredentialsController < ApplicationController
     @credentials = Credentials.new(credential_params)
 
     if @credentials.save
-      redirect_to 'index'
+      redirect_to 'credentials'
     else
       render 'new'
     end
@@ -31,7 +31,7 @@ class CredentialsController < ApplicationController
     @credentials = Credentials.find(params[:id])
 
     if @credentials.update(credential_params)
-      redirect_to @credentials
+      redirect_to 'credentials'
     else
       render 'edit'
     end
@@ -46,7 +46,7 @@ class CredentialsController < ApplicationController
 
 private
   def credential_params
-    params.require(:credential).permit(:website, :username, :password, :tag)
+    params.require(:credentials).permit(:website, :username, :password, :tag)
   end
 end
 

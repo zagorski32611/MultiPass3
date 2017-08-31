@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   root 'welcome#index'
   post 'credentials/new' => 'credentials#new'
-  get 'credentials/:id' => 'credentials#show'
   get 'credentials' => 'credentials#index'
   put 'credentials/:id', to: 'credentials#update'
   resources :credentials
