@@ -14,13 +14,14 @@ class CredentialsController < ApplicationController
 
   def edit
     @credentials = Credentials.find(params[:id])
+
   end
 
   def create
     @credentials = Credentials.new(credential_params)
 
     if @credentials.save
-      redirect_to @credentails
+      redirect_to 'index'
     else
       render 'new'
     end

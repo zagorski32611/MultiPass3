@@ -15,36 +15,13 @@
 <!-- Header -->
 <div class = "App-header">
   <h1>MultiPass!</h1>
-  <h2 class="">Add a password with the form below.</h2>
+  <h2 class="">
+    Click here to see your saved passwords:<%=  link_to 'credentials', controller: 'credentials'  %>
+    Click here to add a new password: <%=  link_to 'new', controller: 'credentials'  %>
+  </h2>
 </div>
 
-<div class= 'App-body'>
-  <%= form_for :credentials, method: (:post) do  |f| %>
-    <p>
-      <%= f.label :website %><br>
-      <%= f.text_field :website %>
-    </p>
-
-    <p>
-      <%= f.label :username %><br>
-      <%= f.text_field :username %>
-    </p>
-
-    <p>
-      <%= f.label :password %><br>
-      <%= f.text_field :password %>
-    </p>
-
-    <p>
-      <%= f.label :tag %><br>
-      <%= f.text_field :tag %>
-    </p>
-    <p>
-      <%= f.submit %>
-    </p>
-  <% end %>
-</div>
-
+<!-- Body -->
 
 <!-- Footer -->
 <div class = "App-footer">
